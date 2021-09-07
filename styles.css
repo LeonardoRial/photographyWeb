@@ -1,0 +1,434 @@
+/* GENERAL VALUES */
+
+:root {
+  --header1: calc(2rem + 1vw);
+  --header2: calc(3.5rem + 1vw);
+  --header3: calc(3rem + 1vw);
+  --header4: calc(2.4rem + 1vw);
+  --text: calc(1.5rem + 1vw);
+  --bigfont: calc(6rem + 1vw);
+  --special-color: #906272;
+  --main-color: #414141;
+  --gray-text: #525252;
+}
+@font-face {
+  font-family: "Rhul";
+  src: url(/Fonts/FrankRuhlLibre-Regular.ttf);
+}
+@font-face {
+  font-family: "Rhul Med";
+  src: url(/Fonts/FrankRuhlLibre-Medium.ttf);
+}
+@font-face {
+  font-family: "Vibes";
+  src: url(/Fonts/GreatVibes-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Rhul", sans-serif;
+  animation: opening 1s ease-in-out;
+}
+h1 {
+  font-size: var(--header1);
+  font-family: "Vibes", sans-serif;
+}
+h2 {
+  font-size: var(--header2);
+}
+h3 {
+  font-size: var(--header3);
+}
+h4,
+h5 {
+  font-size: var(--header4);
+}
+li,
+button,
+label,
+input,
+p,
+a {
+  font-size: var(--text);
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  list-style: none;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Navivgation section */
+.main-head {
+  box-shadow: 0 2rem 2rem rgba(126, 78, 78, 0.4);
+  z-index: 3;
+  position: relative;
+}
+#logo {
+  flex: 1 1 20rem;
+}
+nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  min-height: 10vh;
+  padding: 2rem 0;
+}
+.nav-links {
+  display: flex;
+  flex: 1 1 20rem;
+  justify-content: space-around;
+}
+.hero {
+  min-height: 90vh;
+  width: 95%;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.hero-introduction {
+  flex: 2 1 40rem;
+  text-align: center;
+  z-index: 2;
+  margin-bottom: 5rem;
+}
+.hero-introduction p {
+  color: var(--gray-text);
+  padding: 5rem 10rem;
+}
+.hero-introduction h2 {
+  padding: 3rem;
+}
+.hero-introduction a {
+  color: var(--gray-text);
+  padding: 2rem 8rem;
+  border: 3px solid var(--main-color);
+}
+.hero-images {
+  flex: 1 1 40rem;
+  background: linear-gradient(#dad8dd, #dad1d4);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.hero-elena {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.plant {
+  position: absolute;
+  bottom: -5%;
+  left: -20%;
+  z-index: -1;
+  animation: plant-entrance 2s ease-in-out;
+  /* plant-shake 2.5s infinite ease alternate-reverse 2s; */
+  transform-origin: bottom;
+  max-height: 80%;
+}
+.plant2 {
+  object-fit: cover;
+  left: 50%;
+}
+.plant1 {
+  object-fit: cover;
+}
+
+/* Animations */
+@keyframes opening {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes plant-entrance {
+  from {
+    transform: rotateX(180deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes plant-shake {
+  from {
+    transform: rotateZ(-5deg);
+  }
+  to {
+    transform: rotateZ(0);
+  }
+}
+/* ABOUT SECTION*/
+#about {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 2 1 40rem;
+  justify-content: space-evenly;
+  background: var(--main-color);
+  color: white;
+}
+.about-text div {
+  padding: 3rem 7rem;
+  text-align: center;
+}
+.about-text h2 {
+  font-family: "Vibes", sans-serif;
+  padding: 4rem;
+}
+.about-text h3 {
+  padding: 2rem 0;
+  font-family: "Rhul Med", sans-serif;
+}
+.about-img {
+  position: relative;
+  flex: 1 1 40rem;
+  object-fit: cover;
+}
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-img h5 {
+  letter-spacing: 2rem;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+}
+/* GALLERY SECTION*/
+#work {
+  position: relative;
+  min-height: 100vh;
+}
+.gallery {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery1 {
+  grid-column: 1/3;
+}
+.gallery2 {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+.gallery-text {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  background: rgba(75, 75, 75, 0.5);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+.gallery-text p {
+  font-size: 2rem;
+}
+.gallery-text h2 {
+  margin-bottom: 2rem;
+
+  font-family: "Rhul Med", sans-serif;
+}
+
+/* CONTACT SECTION */
+#contact {
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-wrapper {
+  flex: 3 1 40rem;
+}
+
+.form-wrapper span {
+  font-size: var(--bigfont);
+  color: var(--special-color);
+}
+.form-wrapper label {
+  display: block;
+}
+.form-wrapper input {
+  display: block;
+  margin: 3rem 0;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+}
+.form-wrapper button {
+  padding: 1rem 8rem;
+  background: var(--special-color);
+  color: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+.form-wrapper h2 {
+  margin: 5rem 0;
+}
+.contact img {
+  object-fit: cover;
+  flex: 1 1 40rem;
+}
+footer {
+  background: var(--main-color);
+  display: flex;
+  padding: 3rem 5%;
+  color: white;
+  flex-wrap: wrap;
+  min-height: 10vh;
+  align-items: center;
+}
+footer ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-between;
+  align-items: center;
+}
+footer h4 {
+  flex: 4 1 40rem;
+  font-size: calc(1.5rem + 1vh);
+}
+
+/*BURGER MENU*/
+
+@media screen and (max-width: 650px) {
+  .burger {
+    position: relative;
+    cursor: pointer;
+  }
+  .burger span {
+    padding: 0.2rem 2rem;
+    background: var(--gray-text);
+    margin: 0.5rem 0;
+    display: block;
+    transition: all 0.5s 0.2s;
+  }
+  .nav-links a {
+    color: white;
+    font-size: var(--header3);
+    text-decoration: underline;
+  }
+  .nav-links {
+    background: var(--main-color);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 1s ease-in;
+  }
+
+  .nav-open {
+    transform: translate(-100%);
+  }
+
+  .toggle .line1 {
+    transform: rotateZ(45deg) translateY(300%);
+    background: white;
+  }
+  .toggle .line3 {
+    transform: rotateZ(-45deg) translateY(-300%);
+    background: white;
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .about-text div {
+    padding: 3rem 4rem;
+    text-align: center;
+  }
+  .hero {
+    width: 100%;
+  }
+  .gallery img {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+  .gallery-text {
+    padding: 1rem;
+    object-fit: cover;
+  }
+}
+
+/* MObile reposiveness*/
+
+@media screen and (max-width: 1050px) {
+  .hero {
+    width: 100%;
+  }
+  .hero-introduction {
+    padding: 3rem 1rem;
+  }
+  #contact {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #contact img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  footer {
+    text-align: center;
+  }
+  #contact span {
+    color: white;
+  }
+  footer ul {
+    order: 1;
+  }
+  footer h4 {
+    order: 2;
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1700px) {
+  html {
+    --header1: 3rem;
+    --header2: 4.5rem;
+    --header3: 3.5rem;
+    --header4: 2.5rem;
+    --text: 2.5rem;
+    --bigfont: 6rem;
+  }
+}
